@@ -32,7 +32,6 @@
 - **TypeScript 5.8.3** (Строгая типизация)
 - **Vite 7.1.1** (Сборка + dev-сервер)
 
-```
 ## 📦 Установка
 ```bash
 git clone https://github.com/on247ru/product-compare.git
