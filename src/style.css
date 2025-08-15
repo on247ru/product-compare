@@ -1,0 +1,21 @@
+:root {
+  --roboto-regular: 400;
+  --font-medium: 500;
+  --font-bold: 700;
+  --font-black: 900;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: var(--font-regular);
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  max-width: calc(100% - 50px);
+  display: flex;
+  justify-content: center;
+  place-items: center;
+}
+
+
+

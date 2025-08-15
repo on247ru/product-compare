@@ -1,0 +1,299 @@
+.header-page {
+  display: flex;
+  padding: 42px 0;
+  align-items: center;
+  gap: 48px;
+  position: relative;
+}
+.site-section-title {
+  flex: 1;
+  font-size: 18px;
+  line-height: 1;
+  text-decoration: none;
+  color: #0D5ADC;
+  font-weight: var(--font-black);
+}
+.site-page-title {
+  font-size: 12px;
+  color: #3B4157;
+  text-transform: uppercase;
+  font-weight: var(--font-black);
+}
+.account-link {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  font-size: 12px;
+  text-decoration: none;
+  color: #3B4157;
+  font-weight: var(--font-black);
+}
+.header-page::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background-color: #A6A5A9;
+}
+
+.comparison-page {
+  display: grid;
+  grid-template-columns: 280px repeat(auto-fit, minmax(180px, 1fr));
+  grid-auto-rows: auto;
+  gap: 0;
+  position: relative;
+  padding-top: 63px;
+}
+.comparison-title {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  margin: 0;
+  font-size: 28px;
+  color: #828286;
+  font-size: 48px;
+  line-height: 60px;
+  font-weight: var(--font-bold);
+}
+
+/* Селектор количества товаров */
+.count-selector {
+  grid-column: 2 / -1;
+  grid-row: 1 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  color: #0D5ADC;
+  font-size: 18px;
+  line-height: 43px;
+  font-weight: var(--font-regular);
+}
+.count-selector .options {
+  display: flex;
+  gap: 2px;
+}
+.count-selector .option {
+  padding: 0 4px;
+  cursor: pointer;
+  color: #0D5ADC;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  line-height: 43px;
+  font-weight: var(--font-regular);
+}
+.count-selector .option:hover,
+.count-selector .option:focus {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.count-selector .option.active {
+  position: relative;
+}
+.count-selector .option.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 1px;
+  background: currentColor;
+}
+
+/* Чекбокс различий */
+.show-differences {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  align-items: flex-end;
+  font-size: 14px;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  color: #0D5ADC;
+  font-size: 18px;
+  line-height: 21px;
+  padding-bottom: 77px;
+}
+.show-differences .custom-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin: 0 8px 2px 0;
+  position: relative;
+}
+.show-differences .visually-hidden {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.show-differences .custom-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: #0D5ADC;
+  opacity: 0;
+  transition: opacity 0.2s;
+  border-radius: 3px;
+}
+.show-differences input:checked ~ .custom-checkbox::after {
+  opacity: 1;
+}
+
+/* Карточки товаров */
+.products {
+  grid-column: 2 / -1;
+  grid-row: 2 / 3;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+.product-card {
+  text-align: center;
+  min-width: 180px;
+  position: relative;
+}
+.product-title {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: var(--font-medium);
+  color: #3B4157;
+  margin: 0 0 77px;
+}
+.product-image {
+  height: 120px;
+  margin-bottom: 8px;
+}
+.replace-button {
+  position: absolute;
+  top: 65px;
+  left: 50%;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  right: auto;
+  margin-left: 50px;
+  background: transparent;
+}
+
+/* Таблица характеристик */
+.specs-table {
+  overflow: hidden;
+  grid-column: 1 / -1;
+  border-top: 1px solid #CDCFD2;
+  margin-bottom: 100px;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: var(--font-medium);
+}
+.spec-row {
+  display: flex;
+  border-bottom: 1px solid #CDCFD2;
+}
+.spec-name {
+  flex: 0 0 280px;
+  padding: 33px 0;
+  color: #A4A9B9;
+  text-transform: uppercase;
+}
+.spec-value {
+  flex: 1 1 0;
+  padding: 33px 10px;
+  text-align: center;
+  color: #3B4157;
+}
+/* фон таблицы - 3я строка сетки */
+.comparison-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  background-color: #F4F9FC;
+  z-index: -1;
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+}
+
+/* окно замены товаров */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  max-width: 400px;
+  min-width: 320px;
+  border-radius: 4px;
+}
+.modal-search {
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 28px;
+  color: #C1C1C1;
+  border-radius: 4px;
+  border: 1px solid #C1C1C1;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 18px;
+}
+.modal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-height: 174px;
+  overflow-y: auto;
+  margin: 18px 0;
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #C1C1C1;
+    border-radius: 3px;
+  }
+  scrollbar-width: thin;
+  scrollbar-color: #C1C1C1 transparent;
+}
+.modal-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.modal-swap-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.modal-item-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.modal-close-button {
+  display: none;
+}
